@@ -16,6 +16,15 @@
       zmk,matrix_transform = &five_column_transform;
     };
 
+combos {
+        compatible = "zmk,combos";
+        combo_mod {
+            timeout-ms = <50>;
+            key-positions = <30 36>;
+            bindings = <&mo 3>;
+        };
+    };
+
     behaviors {
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
@@ -72,6 +81,21 @@
    AS(MINUS) AS(EQUAL) &kp LBRC  &kp LBKT  &kp LPAR      &kp RPAR  &kp RBKT  &kp RBRC  AS(FSLH) AS(BSLH)
    AS(GRAVE) &trans    &trans    AS(COMMA) &kp COLON     &kp SEMI  AS(DOT)   &kp LCTRL &kp RALT &trans
                        &kp LGUI  &kp ESC   &kp SPACE     AS(RET)   &trans    &kp TAB
+                        >;
+                };
+
+                dual_layer {
+// -----------------------------------------------------------------------------------------
+// | !     |  @  |  #  |  $  |  %  |     |  ^  |  &  |  *  |  (  |  )  |
+// | BT1   | BT2 | BT3 | BT4 | BT5 |     | LFT | DWN |  UP | RGT |     |
+// | BTCLR |     |     |     |     |     |     |     |     |     |     |
+//               | GUI |     | SPC |     | ENT | ESC | TAB |
+                        display-name = "Dual";
+                        bindings = <
+   &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT        &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR
+   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &kp LEFT  &kp DOWN  &kp UP          &kp RIGHT &trans 
+   &bt BT_CLR   &trans       &trans       &trans       &trans           &trans    &trans    &trans          &trans    &trans 
+                             &kp LGUI     &trans       &kp SPACE        AS(RET)   &kp ESC   &kp TAB
                         >;
                 };
         };
