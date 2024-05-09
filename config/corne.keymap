@@ -37,10 +37,10 @@
 //             | GUI | LWR | SPC |     | ENT | RSE  | BSPC |
                         display-name = "Base";
                         bindings = <
-   SINGLE_QUOTE COMMA PERIOD AS(P) AS(Y)     AS(F)   AS(G)  AS(C)  AS(R)     AS(L)
+   &kp SINGLE_QUOTE &kp COMMA &kp PERIOD AS(P) AS(Y)     AS(F)   AS(G)  AS(C)  AS(R)     AS(L)
    AS(A) AS(O) AS(E) AS(U) AS(I)             AS(D)   AS(H)  AS(T)     AS(N)     AS(S)
-   SEMICOLON AS(Q) AS(J) AS(K) AS(X)         AS(B)   AS(M)  AS(W)  AS(V)  AS(Z)
-        &kp LGUI &mo 1 &mt LCTRL SPACE    &mt LSHIFT BSPC &mo 2  &kp BSPC
+   &kp SEMICOLON AS(Q) AS(J) AS(K) AS(X)         AS(B)   AS(M)  AS(W)  AS(V)  AS(Z)
+        &kp LGUI &mo 1  &kp SPACE    &kp BSPC &mo 2  &kp BSPC
                         >;
                 };
 
