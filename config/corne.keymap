@@ -13,7 +13,7 @@
 
 / {
     chosen {
-      zmk,matrix_transform = &five_column_transform;
+        zmk,physical-layout = &foostan_corne_5col_layout;
     };
 
     behaviors {
@@ -74,4 +74,17 @@
                        &kp LGUI  &kp ESC   &kp SPACE     AS(RET)   &kp TAB   &trans
                         >;
                 };
+
+                extra_1 {
+                        status = "reserved";
+                };
+
+                extra_2 {
+                        status = "reserved";
+                };
+
+                extra_3 {
+                        status = "reserved";
+                };
+        };
 };
