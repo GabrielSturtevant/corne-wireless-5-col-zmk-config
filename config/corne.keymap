@@ -16,6 +16,38 @@
         zmk,physical-layout = &foostan_corne_5col_layout;
     };
 
+    macros {
+        macro_copy: macro_copy {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press   &kp LCTRL
+                &macro_tap     &kp C
+                &macro_release &kp LCTRL
+            >;
+        };
+
+        macro_paste: macro_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press   &kp LCTRL
+                &macro_tap     &kp v
+                &macro_release &kp LCTRL
+            >;
+        };
+
+        macro_cut: macro_cut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <
+                &macro_press   &kp LCTRL
+                &macro_tap     &kp x
+                &macro_release &kp LCTRL
+            >;
+        };
+    };
+
     behaviors {
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
@@ -117,35 +149,4 @@
                         status = "reserved";
                 };
         };
-    macros {
-        macro_copy: macro_copy {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press   &kp LCTRL
-                &macro_tap     &kp C
-                &macro_release &kp LCTRL
-            >;
-        };
-
-        macro_paste: macro_paste {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press   &kp LCTRL
-                &macro_tap     &kp v
-                &macro_release &kp LCTRL
-            >;
-        };
-
-        macro_cut: macro_cut {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <
-                &macro_press   &kp LCTRL
-                &macro_tap     &kp x
-                &macro_release &kp LCTRL
-            >;
-        };
-    };
 };
