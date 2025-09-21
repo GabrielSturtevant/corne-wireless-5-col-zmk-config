@@ -48,7 +48,7 @@
    &kp SINGLE_QUOTE &kp COMMA &kp PERIOD &kp P &kp Y     &kp F   &kp G  &kp C  &kp R  &kp L
    &kp A &kp O &kp E &kp U &kp I             &kp D   &kp H  &kp T &kp N  &kp S
    &kp SEMICOLON &kp Q &kp J &kp K &kp X         &kp B   &kp M  &kp W  &kp V  &kp Z
-        &mt &mo 1 &tog 3  &mt LCTRL SPACE &kp LGUI      &kp ENTER &mt LSHIFT BSPC &mo 2
+        &tog 3  &mt LCTRL SPACE &kp LGUI      &kp ENTER &mt LSHIFT BSPC &mo 2
                         >;
                 };
 
@@ -92,7 +92,7 @@
                         display-name = "Lower";
                         bindings = <
    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
-   &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
+   &none    &none    &none    &kp LBRC &kp RBRC   &none    &none    &none    &none    &none
    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
                     &tog 0    &none    &none    &none    &none    &none
                         >;
