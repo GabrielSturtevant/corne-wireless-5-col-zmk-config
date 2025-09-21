@@ -86,7 +86,7 @@
    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
    &none    &none    &none    &kp LBRC &kp RBRC   &none    &none    &none    &none    &none
    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
-                    &tog 3    &none    &none    &none    &none    &none
+                    &to 0    &none    &none    &none    &none    &none
                         >;
                 };
 
