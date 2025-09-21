@@ -40,7 +40,7 @@
    &kp SINGLE_QUOTE &kp COMMA &kp PERIOD &kp P &kp Y     &kp F   &kp G  &kp C  &kp R  &kp L
    &kp A &kp O &kp E &kp U &kp I             &kp D   &kp H  &kp T &kp N  &kp S
    &kp SEMICOLON &kp Q &kp J &kp K &kp X         &kp B   &kp M  &kp W  &kp V  &kp Z
-        &tog 3  &mt LCTRL SPACE &kp LGUI      &kp ENTER &mt LSHIFT BSPC &tog 2
+        &tog 3  &mt LCTRL SPACE &kp LGUI      &kp ENTER &mt LSHIFT BSPC &to 2
                         >;
                 };
 
@@ -71,7 +71,7 @@
    AS(N1)    AS(N2)    AS(N3)    AS(N4)    AS(N5)        AS(N6)    AS(N7)    AS(N8)    AS(N9)   AS(N0)
    AS(MINUS) AS(EQUAL) &kp LBRC  &kp LBKT  &kp LPAR      &kp RPAR  &kp RBKT  &kp RBRC  AS(FSLH) AS(BSLH)
    AS(GRAVE) &trans    &trans    AS(COMMA) &kp COLON     &kp SEMI  AS(DOT)   &kp LCTRL &kp RALT &trans
-                       &to 0  &kp ESC   &kp SPACE     AS(RET)   &kp TAB   &tog 1
+                       &to 0  &kp ESC   &kp SPACE     AS(RET)   &kp TAB   &to 1
                         >;
                 };
 
