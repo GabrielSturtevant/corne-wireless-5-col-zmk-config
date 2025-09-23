@@ -84,10 +84,26 @@
 //               | GUI |     | SPC |     | ENT | ESC | TAB |
                         display-name = "Mod1";
                         bindings = <
-   &kp TAB    &none    &mt LBKT LBRC     &mt RBKT RBRC    &none       &none    &none    &none    &none    &none
-   &kp ESC    &none    &mt LT LPAR    &mt GT RPAR     &kp I           &kp LEFT  &kp DOWN  &kp UP   &kp RIGHT &none
-   &kp LALT    &none    &kp K_COPY   &kp K_PASTE    &none    &none    &none    &none    &none    &none
+   &kp TAB     &none    &mt LBKT LBRC     &mt RBKT RBRC    &to 4    &none       &none       &none    &none        &none
+   &kp ESC     &none    &mt LT LPAR       &mt GT RPAR      &kp I    &kp LEFT    &kp DOWN    &kp UP   &kp RIGHT    &none
+   &kp LALT    &none    &kp K_COPY        &kp K_PASTE      &none    &none       &none       &none    &none        &none
                     &to 0    &mt LCTRL SPACE    &kp BSPC    &kp ENTER    &kp BSPC    &to 2
+                        >;
+                };
+
+
+                colemak_layer {
+// -----------------------------------------------------------------------------------------
+// |  Q  |  W  |  F  |  P  |  B  |     |  J  |  L   |  U   |  Y   | ; |
+// |  A  |  R  |  S  |  T  |  G  |     |  M  |  N   |  E   |  I   | O | 
+// |  X  |  C  |  D  |  V  |  Z  |     |  K  |  H   |  ,   |  .   | ' |
+//             | GUI | LWR | SPC |     | ENT | RSE  | BSPC |
+                        display-name =  "Colemak";
+                        bindings = <
+   &kp Q    &kp W    &kp F    &kp P    &kp B        &kp J    &kp L    &kp U    &kp Y    &kp SEMICOLON
+   &kp A    &kp R    &kp S    &kp T    &kp G        &kp M    &kp N    &kp E    &kp I    &kp O
+   &kp X    &kp C    &kp D    &kp V    &kp Z        &kp K    &kp K    &kp COMMA    &kp PERIOD    &kp SINGLE_QUOTE
+        &to 0  &mt LCTRL SPACE &kp LGUI      &kp ENTER &mt LSHIFT BSPC &to 2
                         >;
                 };
 
