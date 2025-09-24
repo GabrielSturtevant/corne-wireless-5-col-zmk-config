@@ -41,8 +41,8 @@
         combo_layer_switch {
             timeout-ms = <50>;
             key-positions = <30 35>;
-            layers = <0>;
-            bindings = <&to 4>;
+            layers = <DVO>;
+            bindings = <&to COL>;
         };
         combo_alt_tab {
             timeout-ms = <50>;
@@ -52,7 +52,7 @@
         combo_ctr_backspace {
             timeout-ms = <50>;
             key-positions = <15 16>;
-            layers = <0>;
+            layers = <DVO>;
             bindings = <&kp LC(BSPC)>;
         };
     };
