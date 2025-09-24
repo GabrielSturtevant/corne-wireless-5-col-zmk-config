@@ -38,7 +38,7 @@
         compatible = "zmk,combos";
         combo_alt_tab {
             timeout-ms = <50>;
-            key-positions = <29 30 31>;
+            key-positions = <20 21 22>;
             bindings = <&kp LA(TAB)>;
         };
     };
