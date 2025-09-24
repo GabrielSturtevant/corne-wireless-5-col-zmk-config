@@ -44,11 +44,16 @@
             layers = <0>;
             bindings = <&to 4>;
         };
-        compatible = "zmk,combos";
         combo_alt_tab {
             timeout-ms = <50>;
             key-positions = <20 21 22>;
             bindings = <&kp LA(TAB)>;
+        };
+        combo_alt_tab {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            layers = <0>;
+            bindings = <&kp LA(BSPC)>;
         };
     };
         keymap {
