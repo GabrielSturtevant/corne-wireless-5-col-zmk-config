@@ -44,14 +44,12 @@
             layers = <0>;
             bindings = <&to 4>;
         };
-        compatible = "zmk,combos";
         combo_alt_tab {
             timeout-ms = <50>;
             key-positions = <20 21 22>;
             bindings = <&kp LA(TAB)>;
         };
-        compatible = "zmk,combos";
-        combo_alt_tab {
+        combo_alt_backspace {
             timeout-ms = <50>;
             key-positions = <16 17>;
             layers = <0>;
