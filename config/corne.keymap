@@ -86,7 +86,7 @@
                         bindings = <
    &kp TAB     &none    &mt LBKT LBRC     &mt RBKT RBRC    &to 4    &none       &none       &none    &none        &none
    &kp ESC     &none    &mt LT LPAR       &mt GT RPAR      &kp I    &kp LEFT    &kp DOWN    &kp UP   &kp RIGHT    &none
-   &kp LALT    &none    &kp K_COPY        &kp K_PASTE      &none    &none       &none       &none    &none        &none
+   &kp LALT    &none    &mt LC(X) LC(C)        &kp LC(X)      &none    &none       &none       &none    &none        &none
                     &to 0    &mt LCTRL SPACE    &kp BSPC    &kp ENTER    &kp BSPC    &to 2
                         >;
                 };
