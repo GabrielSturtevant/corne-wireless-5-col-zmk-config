@@ -55,6 +55,12 @@
             layers = <DVO>;
             bindings = <&kp LC(BSPC)>;
         };
+        combo_ctr_del {
+            timeout-ms = <50>;
+            key-positions = <25 26>;
+            layers = <DVO>;
+            bindings = <&kp LC(DEL)>;
+        };
     };
         keymap {
                 compatible = "zmk,keymap";
@@ -101,7 +107,7 @@
    AS(N1)    AS(N2)    AS(N3)    AS(N4)    AS(N5)        AS(N6)    AS(N7)    AS(N8)    AS(N9)   AS(N0)
    AS(MINUS) AS(EQUAL) &kp LBRC  &kp LBKT  &kp LPAR      &kp RPAR  &kp RBKT  &kp RBRC  AS(FSLH) AS(BSLH)
    AS(GRAVE) &trans    &trans    AS(COMMA) &kp COLON     &kp SEMI  AS(DOT)   &kp LCTRL &kp RALT &trans
-                       &to 0  &kp SPACE    &kp ESC     &kp ENTER   &kp BSPC   &to 1
+                       &to 0  &key_repeat    &kp ESC     &kp ENTER   &kp BSPC   &to 1
                         >;
                 };
 
@@ -116,7 +122,7 @@
    &kp TAB     &none    &mt LBKT LBRC     &mt RBKT RBRC    &to 4    &none       &none       &none    &none        &none
    &kp ESC     &none    &mt LT LPAR       &mt GT RPAR      &kp I    &kp LEFT    &kp DOWN    &kp UP   &kp RIGHT    &none
    &kp LALT    &kp LC(Z)    &mt LC(X) LC(C)        &kp LC(V)      &none    &none    AS(MINUS)    AS(EQUAL)    AS(BSLH)    AS(FSLH)
-                    &to 0    &mt LCTRL SPACE    &kp BSPC    &kp ENTER    &kp BSPC    &to 2
+                    &to 0    &mt LCTRL SPACE    &kp DEL    &kp ENTER    &kp BSPC    &to 2
                         >;
                 };
 
