@@ -56,6 +56,18 @@
             layers = <DVO>;
             bindings = <&kp LC(BSPC)>;
         };
+        combo_left_backspace {
+            timeout-ms = <50>;
+            key-positions = <12 13>;
+            layers = <DVO>;
+            bindings = <&kp BSPC>;
+        };
+        combo_right_backspace {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            layers = <DVO>;
+            bindings = <&kp BSPC>;
+        };
         combo_ctr_del {
             timeout-ms = <50>;
             key-positions = <25 26>;
