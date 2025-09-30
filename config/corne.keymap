@@ -66,13 +66,13 @@
             timeout-ms = <50>;
             key-positions = <15 16>;
             layers = <MOD_LAYER>;
-            bindings = <&kp LC(LEFT)>;
+            bindings = <&mt HOME LC(LEFT)>;
         };
         combo_ctr_right {
             timeout-ms = <50>;
             key-positions = <17 18>;
             layers = <MOD_LAYER>;
-            bindings = <&kp LC(RIGHT)>;
+            bindings = <&mt END LC(RIGHT)>;
         };
     };
         keymap {
