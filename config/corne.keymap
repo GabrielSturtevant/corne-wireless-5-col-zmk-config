@@ -12,6 +12,7 @@
 #define AS(keycode) &as LS(keycode) keycode
 #define MO_TO(layer) &mo_to layer layer
 #define DVO 0
+#define MOD_LAYER 3
 #define COL 4
 
 / {
@@ -60,6 +61,18 @@
             key-positions = <25 26>;
             layers = <DVO>;
             bindings = <&kp LC(DEL)>;
+        };
+        combo_ctr_left {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            layers = <MOD_LAYER>;
+            bindings = <&kp LC(LEFT)>;
+        };
+        combo_ctr_right {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            layers = <MOD_LAYER>;
+            bindings = <&kp LC(RIGHT)>;
         };
     };
         keymap {
