@@ -84,7 +84,7 @@
             timeout-ms = <50>;
             key-positions = <16 17>;
             layers = <MOD_LAYER>;
-            bindings = <&PG_DN>;
+            bindings = <&kp PG_DN>;
         };
     };
         keymap {
