@@ -74,6 +74,18 @@
             layers = <MOD_LAYER>;
             bindings = <&mt END LC(RIGHT)>;
         };
+        combo_page_up {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            layers = <MOD_LAYER>;
+            bindings = <&kp PG_UP>;
+        };
+        combo_page_down {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            layers = <MOD_LAYER>;
+            bindings = <&PG_DN>;
+        };
     };
         keymap {
                 compatible = "zmk,keymap";
