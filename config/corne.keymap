@@ -65,14 +65,14 @@
             bindings = <&kp LC(BSPC)>;
         };
         combo_left_backspace {
-            timeout-ms = <30>;
-            key-positions = <12 13>;
+            timeout-ms = <50>;
+            key-positions = <2 3>;
             layers = <DVO>;
             bindings = <&kp BSPC>;
         };
         combo_right_backspace {
-            timeout-ms = <10>;
-            key-positions = <16 17>;
+            timeout-ms = <50>;
+            key-positions = <6 7>;
             layers = <DVO>;
             bindings = <&kp BSPC>;
         };
