@@ -71,7 +71,7 @@
             bindings = <&kp BSPC>;
         };
         combo_right_backspace {
-            timeout-ms = <30>;
+            timeout-ms = <20>;
             key-positions = <16 17>;
             layers = <DVO>;
             bindings = <&kp BSPC>;
