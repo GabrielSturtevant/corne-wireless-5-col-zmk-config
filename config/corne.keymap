@@ -11,9 +11,15 @@
 
 #define AS(keycode) &as LS(keycode) keycode
 #define MO_TO(layer) &mo_to layer layer
-#define DVO 0
-#define MOD_LAYER 3
-#define COL 4
+#define BASE 0
+#define MEDIA 1
+#define NAV 2
+#define MOUSE 3
+#define SYM 4
+#define NUM 5
+#define FUN 6
+
+
 
 / {
     chosen {
@@ -40,71 +46,36 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <250>;
+            tapping-term-ms = <200>;
             bindings = <&kp>, <&kp>;
             display-name = "Mod-Tap";
         };
     };
     combos {
         compatible = "zmk,combos";
-        combo_layer_switch {
-            timeout-ms = <50>;
-            key-positions = <30 35>;
-            layers = <DVO>;
-            bindings = <&to COL>;
-        };
-        combo_alt_tab {
-            timeout-ms = <50>;
-            key-positions = <20 21 22>;
-            bindings = <&kp LA(TAB)>;
-        };
         combo_ctr_backspace {
             timeout-ms = <50>;
             key-positions = <15 16>;
-            layers = <DVO>;
+            layers = <BASE>;
             bindings = <&kp LC(BSPC)>;
-        };
-        combo_left_backspace {
-            timeout-ms = <50>;
-            key-positions = <2 3>;
-            layers = <DVO>;
-            bindings = <&kp BSPC>;
-        };
-        combo_right_backspace {
-            timeout-ms = <50>;
-            key-positions = <6 7>;
-            layers = <DVO>;
-            bindings = <&kp BSPC>;
         };
         combo_ctr_del {
             timeout-ms = <50>;
             key-positions = <25 26>;
-            layers = <DVO>;
+            layers = <BASE>;
             bindings = <&kp LC(DEL)>;
         };
         combo_ctr_left {
             timeout-ms = <50>;
             key-positions = <15 16>;
-            layers = <MOD_LAYER>;
+            layers = <NAV>;
             bindings = <&mt HOME LC(LEFT)>;
         };
         combo_ctr_right {
             timeout-ms = <50>;
             key-positions = <17 18>;
-            layers = <MOD_LAYER>;
+            layers = <NAV>;
             bindings = <&mt END LC(RIGHT)>;
-        };
-        combo_page_up {
-            timeout-ms = <50>;
-            key-positions = <6 7>;
-            layers = <MOD_LAYER>;
-            bindings = <&kp PG_UP>;
-        };
-        combo_page_down {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            layers = <MOD_LAYER>;
-            bindings = <&kp PG_DN>;
         };
     };
         keymap {
@@ -119,86 +90,78 @@
                         display-name = "Base";
                         bindings = <
    &kp SINGLE_QUOTE &kp COMMA &kp PERIOD &kp P &kp Y     &kp F   &kp G  &kp C  &kp R  &kp L
-   &kp A &mt LALT O &mt LCTRL E &mt LSHIFT U &kp I             &kp D   &mt RSHIFT H  &mt RCTRL T &mt RALT N  &kp S
+   &mt LGUI A &mt LALT O &mt LCTRL E &mt LSHIFT U &kp I             &kp D   &mt RSHIFT H  &mt RCTRL T &mt LALT N  &mt LGUI S
    &kp SEMICOLON &kp Q &kp J &kp K &kp X         &kp B   &kp M  &kp W  &kp V  &kp Z
-        MO_TO(3)  &mt LCTRL SPACE &kp LGUI      &kp ENTER &mt LSHIFT BSPC MO_TO(2)
+        &lt MEDIA ESC &lt NAV SPACE &lt MOUSE TAB      &lt SYM ENTER &lt NUM BSPC &lt FUN DEL
                         >;
                 };
 
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// | !     |  @  |  #  |  $  |  %  |     |  ^  |  &  |  *  |  (  |  )  |
-// | BT1   | BT2 | BT3 | BT4 | BT5 |     | LFT | DWN |  UP | RGT |     |
-// | BTCLR |     |     |     |     |     |     |     |     |     |     |
-//               | GUI |     | SPC |     | ENT | ESC | TAB |
-                        display-name = "Lower";
+                media_layer {
+                        display-name = "Media";
                         bindings = <
-   &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT        &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR  &kp RPAR
-   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4     &kp LEFT  &kp DOWN  &kp UP          &kp RIGHT &trans 
-   &bt BT_CLR   &trans       &trans       &trans       &trans           &trans    &trans    &trans          &trans    &trans 
-                             &to 0       &kp LGUI     &kp SPACE        &kp ENTER   &kp BSPC   &kp TAB
+   &none    &none    &none     &mo BASE   &none    &none    &none        &none        &none        &none
+   &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none    &none    &none        &none        &none        &none
+   &none    &none    &to FUN   &to MEDIA  &none    &none    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+                     &none     &none      &none    &none    &none        &none
                         >;
                 };
 
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// | 1! |  2@ |  3# |  4$ |  5% |     |  6^ |  7& |  8* |  9(  |  0)  |
-// |ESC |  =+ |  {  |  [  |  (  |     |  )  |  ]  |  }  |  /?  |  \|  |
-// | `~ |     |     |  ,< |  :  |     |  ;  |  .> | CTRL| META |      |
-//            | GUI | ESC | SPC |     | ENT |     | TAB |
-                        display-name = "Raise";
+                nav_layer {
+                        display-name = "Navigation";
                         bindings = <
-
-   AS(N1)    AS(N2)    AS(N3)    AS(N4)    AS(N5)        AS(N6)    AS(N7)    AS(N8)    AS(N9)   AS(N0)
-   &kp ESC AS(EQUAL) &kp LBRC  &kp LBKT  &kp LPAR      &kp RPAR  &kp RBKT  &kp RBRC  AS(FSLH) AS(BSLH)
-   AS(GRAVE) &trans    &trans    AS(COMMA) &kp COLON     &kp SEMI  AS(DOT)   &kp LCTRL &kp RALT &trans
-                       &to 0  &key_repeat    &kp DEL     &kp ENTER   &kp BSPC   &to 1
+   &none    &none    &none     &to BASE   &none    &kp K_REDO &kp K_PASTE &kp K_COPY &kp K_CUT &kp K_UNDO
+   &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none    &caps_word &kp LEFT    &kp DOWN   &kp UP    &kp RIGHT
+   &none    &none    &to NUM   &to NAV    &none    &kp INS    &kp HOME    &kp PG_DN  &kp PG_UP &kp END
+                     &none     &none      &none    &kp ENTER  &kp BSPC    &kp DEL
+                        >;
+                };
+                mouse_layer {
+                        display-name = "Mouse";
+                        bindings = <
+   &none    &none    &none     &to BASE   &none    &kp K_REDO &kp K_PASTE    &kp K_COPY     &kp K_CUT    &kp K_UNDO
+   &kp LGUI &kp LALT &kp LCTRL &kp LSHIFT &none    &none      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT
+   &none    &none    &to SYM   &to MOUSE  &none    &none      &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_UP &msc SCRL_RIGHT
+                     &none     &none      &none    &mkp RCLK  &mkp LCLK      &mkp MCLK
                         >;
                 };
 
-                mod_layer_1 {
-// -----------------------------------------------------------------------------------------
-// | !     |  @  |  #  |  $  |  %  |     |  ^  |  &  |  *  |  (  |  )  |
-// | BT1   | BT2 | BT3 | BT4 | BT5 |     | LFT | DWN |  UP | RGT |     |
-// | BTCLR |     |     |     |     |     |     |     |     |     |     |
-//               | GUI |     | SPC |     | ENT | ESC | TAB |
-                        display-name = "Mod1";
+                symbol_layer {
+                        display-name = "Symbols";
                         bindings = <
-   &kp TAB     &none    &mt LBKT LBRC     &mt RBKT RBRC    &to 4    &none       &none       &none    &none        &none
-   &kp ESC     &none    &mt LT LPAR       &mt GT RPAR      &kp I    &kp LEFT    &kp DOWN    &kp UP   &kp RIGHT    &none
-   &kp LALT    &kp LC(Z)    &mt LC(X) LC(C)        &kp LC(V)      &none    &none    AS(MINUS)    AS(EQUAL)    AS(BSLH)    AS(FSLH)
-                    &to 0    &mt LCTRL SPACE    &kp DEL    &kp ENTER    &kp BSPC    &to 2
+   &kp LBRC  &kp AMPS &kp STAR  &kp LPAR  &kp RBRC   &none &to BASE   &none     &none    &none
+   &kp COLON &kp DLLR &kp PRCNT &kp CARET &kp PLUS   &none &kp RSHIFT &kp RCTRL &kp LALT &kp LGUI
+   &kp TILDE &kp EXCL &kp AT    &kp POUND &kp PIPE   &none &to SYM    &to MOUSE &none    &none
+                      &kp LPAR  &kp RPAR  &kp UNDER  &none &none      &none
                         >;
                 };
 
-
-                colemak_layer {
-// -----------------------------------------------------------------------------------------
-// |  Q  |  W  |  F  |  P  |  B  |     |  J  |  L   |  U   |  Y   | ; |
-// |  A  |  R  |  S  |  T  |  G  |     |  M  |  N   |  E   |  I   | O | 
-// |  X  |  C  |  D  |  V  |  Z  |     |  K  |  H   |  ,   |  .   | ' |
-//             | GUI | LWR | SPC |     | ENT | RSE  | BSPC |
-                        display-name =  "Colemak";
+               number_layer {
+                        display-name = "Numbers";
                         bindings = <
-   &kp Q    &kp W    &kp F    &kp P    &kp B        &kp J    &kp L    &kp U    &kp Y    &kp SEMICOLON
-   &kp A    &kp R    &kp S    &kp T    &kp G        &kp M    &kp N    &kp E    &kp I    &kp O
-   &kp X    &kp C    &kp D    &kp V    &kp Z        &kp K    &kp K    &kp COMMA    &kp PERIOD    &kp SINGLE_QUOTE
-        &to 0  &mt LCTRL SPACE &kp LGUI      &kp ENTER &mt LSHIFT BSPC &to 2
+   &kp LBKT  &kp N7 &kp N8 &kp N9 &kp RBKT  &none &to BASE   &none     &none    &none
+   &kp SEMI  &kp N4 &kp N5 &kp N6 &kp EQUAL &none &kp RSHIFT &kp RCTRL &kp LALT &kp LGUI
+   &kp GRAVE &kp N1 &kp N2 &kp N3 &kp BSLH  &none &to NUM    &to NAV   &none    &none
+                       &kp DOT   &kp N0 &kp MINUS &none &none      &none
+                        >;
+                };
+
+                function_layer {
+                        display-name = "Function";
+                        bindings = <
+   &kp F12 &kp F7 &kp F8    &kp F9    &kp PSCRN         &none &to BASE   &none     &none    &none
+   &kp F11 &kp F4 &kp F5    &kp F6    &kp SLCK          &none &kp RSHIFT &kp RCTRL &kp LALT &kp LGUI
+   &kp F10 &kp F1 &kp F2    &kp F3    &kp PAUSE_BREAK   &none &to FUN    &to MEDIA &none    &none
+                  &kp K_APP &kp SPACE &kp TAB           &none &none      &none
                         >;
                 };
 
                 mod_layer_2 {
-// -----------------------------------------------------------------------------------------
-// | !     |  @  |  #  |  $  |  %  |     |  ^  |  &  |  *  |  (  |  )  |
-// | BT1   | BT2 | BT3 | BT4 | BT5 |     | LFT | DWN |  UP | RGT |     |
-// | BTCLR |     |     |     |     |     |     |     |     |     |     |
-//               | GUI |     | SPC |     | ENT | ESC | TAB |
                         display-name = "Mod2";
                         bindings = <
    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
    &none    &none    &none    &none    &none    &none    &none    &none    &none    &none
-                    &tog 0    &none    &none    &none    &none    &none
+                     &none    &none    &none    &none    &none    &none
                         >;
                 };
 
