@@ -130,7 +130,7 @@
                         display-name = "Symbols";
                         bindings = <
    &kp LBRC  &kp AMPS &kp STAR  &kp LPAR  &kp RBRC   &none &to BASE   &none     &none    &none
-   &kp COLON &kp DLLR &kp PRCNT &kp CARET &kp PLUS   &none &kp RSHIFT &kp RCTRL &kp LALT &kp LGUI
+   &kp QMARK &kp DLLR &kp PRCNT &kp CARET &kp PLUS   &none &kp RSHIFT &kp RCTRL &kp LALT &kp LGUI
    &kp TILDE &kp EXCL &kp AT    &kp POUND &kp PIPE   &none &to SYM    &to MOUSE &none    &none
                       &kp LPAR  &kp RPAR  &kp UNDER  &none &none      &none
                         >;
@@ -140,7 +140,7 @@
                         display-name = "Numbers";
                         bindings = <
    &kp LBKT  &kp N7 &kp N8 &kp N9 &kp RBKT  &none &to BASE   &none     &none    &none
-   &kp SEMI  &kp N4 &kp N5 &kp N6 &kp EQUAL &none &kp RSHIFT &kp RCTRL &kp LALT &kp LGUI
+   &kp FSLH  &kp N4 &kp N5 &kp N6 &kp EQUAL &none &kp RSHIFT &kp RCTRL &kp LALT &kp LGUI
    &kp GRAVE &kp N1 &kp N2 &kp N3 &kp BSLH  &none &to NUM    &to NAV   &none    &none
                        &kp DOT   &kp N0 &kp MINUS &none &none      &none
                         >;
