@@ -89,31 +89,43 @@
     };
     combos {
         compatible = "zmk,combos";
-        combo_ctr_backspace {
+        c_ctr_backspace {
             timeout-ms = <50>;
             key-positions = <15 16>;
             layers = <BASE>;
             bindings = <&kp LC(BSPC)>;
         };
-        combo_ctr_del {
+        c_backspace {
             timeout-ms = <50>;
             key-positions = <25 26>;
             layers = <BASE>;
-            bindings = <&kp LC(DEL)>;
+            bindings = <&kp BSPC>;
         };
-        combo_ctr_left {
+        c_open_paren {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            layers = <BASE>;
+            bindings = <&kp LPAR>;
+        }
+        c_close_paren {
+            timeout-ms = <50>;
+            key-positions = <12 13>;
+            layers = <BASE>;
+            bindings = <&kp RPAR>;
+        }
+        c_ctrl_left {
             timeout-ms = <50>;
             key-positions = <15 16>;
             layers = <NAV>;
             bindings = <&mt HOME LC(LEFT)>;
         };
-        combo_ctr_right {
+        c_ctrl_right {
             timeout-ms = <50>;
             key-positions = <17 18>;
             layers = <NAV>;
             bindings = <&mt END LC(RIGHT)>;
         };
-        combo_key_repeat {
+        c_key_repeat {
             timeout-ms = <50>;
             key-positions = <34 35>;
             layers = <BASE>;
@@ -132,7 +144,7 @@
                         display-name = "Base";
                         bindings = <
    &kp SINGLE_QUOTE &kp COMMA &kp PERIOD &kp P &kp Y     &kp F   &kp G  &kp C  &kp R  &kp L
-   &mt LGUI A &mt LALT O &mt LCTRL E &mt LSHIFT U &kp I             &kp D   &mt RSHIFT H  &mt RCTRL T &mt LALT N  &mt LGUI S
+   &mt LGUI A &mt LALT O &mt LCTRL E &mt LSHIFT U &kp I             &kp D   &mt RSHIFT H  &mt RCTRL T &mt RALT N  &mt RGUI S
    &kp SEMICOLON &kp Q &kp J &kp K &kp X         &kp B   &kp M  &kp W  &kp V  &kp Z
         &lt MEDIA ESC &lt NAV SPACE &lt MOUSE TAB      &lt SYM ENTER &lt NUM BSPC &lt FUN DEL
                         >;
