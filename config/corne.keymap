@@ -106,13 +106,37 @@
             key-positions = <11 12>;
             layers = <BASE>;
             bindings = <&kp LPAR>;
-        }
+        };
         c_close_paren {
             timeout-ms = <50>;
             key-positions = <12 13>;
             layers = <BASE>;
             bindings = <&kp RPAR>;
-        }
+        };
+       c_open_brace {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            layers = <BASE>;
+            bindings = <&kp LBRC>;
+        };
+        c_close_brace {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            layers = <BASE>;
+            bindings = <&kp RBRC>;
+        };
+       c_open_bracket {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            layers = <BASE>;
+            bindings = <&kp LBKT>;
+        };
+        c_close_bracket {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            layers = <BASE>;
+            bindings = <&kp RBKT>;
+        };
         c_ctrl_left {
             timeout-ms = <50>;
             key-positions = <15 16>;
