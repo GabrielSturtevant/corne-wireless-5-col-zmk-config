@@ -28,57 +28,45 @@
     };
 
     macros {
-        macro_brackets: macro_brackets {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_release &kp LCTRL>,
-                    <&macro_release &kp RCTRL>,
-                    <&kp LBKT>,
-                    <&kp RBKT>,
-                    <&kp LEFT>;
-        };
-        macro_parens: macro_parens {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
-        };
-        macro_braces: macro_braces {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_release &kp LSHFT>,
-                    <&macro_release &kp RSHFT>,
-                    <&kp LBRC>,
-                    <&kp RBRC>,
-                    <&kp LEFT>;
-        };
-        macro_angle: macro_angle {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_release &kp LALT>,
-                    <&macro_release &kp RALT>,
-                    <&kp LT>,
-                    <&kp GT>,
-                    <&kp LEFT>;
-        };
+
     };
 
     behaviors {
-        parens_shift_morph: parens_shift_morph {
+        open_shift_morph: open_shift_morph {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&macro_parens>, <&macro_braces>;
+            bindings = <&kp LPAR>, <&kp LBRC>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-        parens_ctrl_morph: parens_ctrl_morph {
+        open_ctrl_morph: open_ctrl_morph {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&parens_shift_morph>, <&macro_brackets>;
+            bindings = <&open_shift_morph>, <&kp LBKT>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
-        parens_alt_morph: parens_alt_morph {
+        open_morph: open_morph {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
-            bindings = <&parens_ctrl_morph>, <&macro_angle>;
+            bindings = <&open_ctrl_morph>, <&kp LT>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
+        close_shift_morph: close_shift_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RPAR>, <&kp RBRC>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        close_ctrl_morph: close_ctrl_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&close_shift_morph>, <&kp RBKT>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        close_morph: close_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&close_ctrl_morph>, <&kp GT>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
 
@@ -143,7 +131,7 @@
 //             | GUI | LWR | SPC |     | ENT | RSE  | BSPC |
                         display-name = "Base";
                         bindings = <
-   &kp SINGLE_QUOTE &kp COMMA &kp PERIOD &mt &parens_alt_morph P &kp Y     &kp F   &kp G  &kp C  &kp R  &kp L
+   &kp SINGLE_QUOTE &kp COMMA &kp PERIOD &kp P &kp Y     &kp F   &kp G  &kp C  &kp R  &kp L
    &mt LGUI A &mt LALT O &mt LCTRL E &mt LSHIFT U &kp I             &kp D   &mt RSHIFT H  &mt RCTRL T &mt LALT N  &mt LGUI S
    &kp SEMICOLON &kp Q &kp J &kp K &kp X         &kp B   &kp M  &kp W  &kp V  &kp Z
         &lt MEDIA ESC &lt NAV SPACE &lt MOUSE TAB      &lt SYM ENTER &lt NUM BSPC &lt FUN DEL
@@ -182,10 +170,10 @@
                 symbol_layer {
                         display-name = "Symbols";
                         bindings = <
-   &kp LBRC  &kp AMPS &kp STAR  &parens_alt_morph  &kp RBRC   &none &to BASE   &none     &none    &none
-   &kp QMARK &kp DLLR &kp PRCNT &kp CARET          &kp PLUS   &none &kp RSHIFT &kp RCTRL &kp LALT &kp LGUI
-   &kp TILDE &kp EXCL &kp AT    &kp POUND          &kp PIPE   &none &to SYM    &to MOUSE &none    &none
-                      &kp LPAR  &kp RPAR           &kp UNDER  &none &none      &none
+   &kp LBRC  &kp AMPS &kp STAR     &kp RPAR      &kp RBRC   &none &to BASE   &none     &none    &none
+   &kp QMARK &kp DLLR &kp PRCNT    &kp CARET     &kp PLUS   &none &kp RSHIFT &kp RCTRL &kp LALT &kp LGUI
+   &kp TILDE &kp EXCL &kp AT       &kp POUND     &kp PIPE   &none &to SYM    &to MOUSE &none    &none
+                      &open_morph  &close_morph  &kp UNDER  &none &none      &none
                         >;
                 };
 
