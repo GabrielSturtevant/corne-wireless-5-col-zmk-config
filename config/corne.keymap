@@ -35,9 +35,7 @@
                     <&macro_release &kp RCTRL>,
                     <&kp LBKT>,
                     <&kp RBKT>,
-                    <&kp LEFT>,
-                    <&macro_press &kp LCTRL>,
-                    <&macro_press &kp RCTRL>;
+                    <&kp LEFT>;
         };
         macro_parens: macro_parens {
             compatible = "zmk,behavior-macro";
@@ -51,9 +49,7 @@
                     <&macro_release &kp RSHFT>,
                     <&kp LBRC>,
                     <&kp RBRC>,
-                    <&kp LEFT>,
-                    <&macro_press &kp LSHFT>,
-                    <&macro_press &kp RSHFT>;
+                    <&kp LEFT>;
         };
         macro_angle: macro_angle {
             compatible = "zmk,behavior-macro";
@@ -62,9 +58,7 @@
                     <&macro_release &kp RALT>,
                     <&kp LT>,
                     <&kp GT>,
-                    <&kp LEFT>,
-                    <&macro_press &kp LALT>,
-                    <&macro_press &kp RALT>;
+                    <&kp LEFT>;
         };
     };
 
