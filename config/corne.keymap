@@ -27,7 +27,49 @@
         zmk,physical-layout = &foostan_corne_5col_layout;
     };
 
+    macros {
+        macro_brackets: macro_brackets {
+            compatible = "zmk, behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+        };
+        macro_parens: macro_parens {
+            compatible = "zmk, behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR &kp RPAR &kp LEFT>;
+        };
+        macro_braces: macro_braces {
+            compatible = "zmk, behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
+        };
+        macro_angle: macro_angle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LT &kp GT &kp LEFT>;
+        };
+    };
+
     behaviors {
+        parens_shift_morph: parens_shift_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&macro_parens>, <&macro_braces>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        parens_ctrl_morph: parens_ctrl_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&parens_shift_morph>, <&macro_brackets>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+        parens_alt_morph: parens_alt_morph {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&parens_ctrl_morph>, <&macro_angle>;
+            mods = <(MOD_LALT|MOD_RALT)>;
+        };
+
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -128,10 +170,10 @@
                 symbol_layer {
                         display-name = "Symbols";
                         bindings = <
-   &kp LBRC  &kp AMPS &kp STAR  &kp LPAR  &kp RBRC   &none &to BASE   &none     &none    &none
-   &kp QMARK &kp DLLR &kp PRCNT &kp CARET &kp PLUS   &none &kp RSHIFT &kp RCTRL &kp LALT &kp LGUI
-   &kp TILDE &kp EXCL &kp AT    &kp POUND &kp PIPE   &none &to SYM    &to MOUSE &none    &none
-                      &kp LPAR  &kp RPAR  &kp UNDER  &none &none      &none
+   &kp LBRC  &kp AMPS &kp STAR  &parens_alt_morph  &kp RBRC   &none &to BASE   &none     &none    &none
+   &kp QMARK &kp DLLR &kp PRCNT &kp CARET          &kp PLUS   &none &kp RSHIFT &kp RCTRL &kp LALT &kp LGUI
+   &kp TILDE &kp EXCL &kp AT    &kp POUND          &kp PIPE   &none &to SYM    &to MOUSE &none    &none
+                      &kp LPAR  &kp RPAR           &kp UNDER  &none &none      &none
                         >;
                 };
 
