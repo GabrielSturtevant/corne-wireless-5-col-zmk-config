@@ -31,7 +31,13 @@
         macro_brackets: macro_brackets {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LBKT &kp RBKT &kp LEFT>;
+            bindings = <&macro_release &kp LCTRL>,
+                    <&macro_release &kp RCTRL>,
+                    <&kp LBKT>,
+                    <&kp RBKT>,
+                    <&kp LEFT>,
+                    <&macro_press &kp LCTRL>,
+                    <&macro_press &kp RCTRL>;
         };
         macro_parens: macro_parens {
             compatible = "zmk,behavior-macro";
@@ -41,12 +47,24 @@
         macro_braces: macro_braces {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LBRC &kp RBRC &kp LEFT>;
+            bindings = bindings = <&macro_release &kp LSHFT>,
+                    <&macro_release &kp RSHFT>,
+                    <&kp LBRC>,
+                    <&kp RBRC>,
+                    <&kp LEFT>,
+                    <&macro_press &kp LSHFT>,
+                    <&macro_press &kp RSHFT>;
         };
         macro_angle: macro_angle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LT &kp GT &kp LEFT>;
+            bindings = <&macro_release &kp LALT>,
+                    <&macro_release &kp RALT>,
+                    <&kp LT>,
+                    <&kp GT>,
+                    <&kp LEFT>,
+                    <&macro_press &kp LALT>,
+                    <&macro_press &kp RALT>;
         };
     };
 
