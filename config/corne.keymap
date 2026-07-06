@@ -123,13 +123,13 @@
             bindings = <&kp BSPC>;
         };
         c_open_paren {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <11 12>;
             layers = <BASE>;
             bindings = <&kp LPAR>;
         };
         c_close_paren {
-            timeout-ms = <50>;
+            timeout-ms = <25>;
             key-positions = <12 13>;
             layers = <BASE>;
             bindings = <&kp RPAR>;
@@ -181,6 +181,24 @@
             key-positions = <5 29>;
             layers = <MEDIA>;
             bindings = <&bt BT_CLR>;
+        };
+        c_plus_sign {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            layers = <BASE>;
+            bindings = <&kp PLUS>;
+        };
+        c_equal_sign {
+            timeout-ms <50>;
+            key-positions = <13 14>;
+            layers = <BASE>;
+            bindings = <&kp EQUAL>;
+        };
+        c_forward_slash {
+            timeout-ms <50>;
+            key-positions = <23 24>;
+            layers = <BASE>;
+            bindings = <&kp FSLH>;
         };
     };
         keymap {
