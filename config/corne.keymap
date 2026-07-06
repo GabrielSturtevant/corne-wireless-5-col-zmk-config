@@ -156,7 +156,7 @@
             bindings = <&key_repeat>;
         };
         c_bluetooth_clear {
-            timeout-ms <50>;
+            timeout-ms = <50>;
             key-positions = <5 29>;
             layers = <MEDIA>;
             bindings = <&bt BT_CLR>;
