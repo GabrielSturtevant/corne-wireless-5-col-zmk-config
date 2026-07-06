@@ -103,7 +103,7 @@
             tapping-term-ms = <400>;
             quick_tap_ms = <200>;
             bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <LEFT_HAND_KEYS>;
+            hold-trigger-key-positions = <RIGHT_HAND_KEYS>;
         };
     };
     combos {
