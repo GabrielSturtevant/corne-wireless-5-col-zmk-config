@@ -189,13 +189,13 @@
             bindings = <&kp PLUS>;
         };
         c_equal_sign {
-            timeout-ms <50>;
+            timeout-ms = <50>;
             key-positions = <13 14>;
             layers = <BASE>;
             bindings = <&kp EQUAL>;
         };
         c_forward_slash {
-            timeout-ms <50>;
+            timeout-ms = <50>;
             key-positions = <23 24>;
             layers = <BASE>;
             bindings = <&kp FSLH>;
