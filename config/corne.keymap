@@ -11,8 +11,8 @@
 #include <dt-bindings/zmk/mouse.h>
 
 #define AS(keycode) &as LS(keycode) keycode
-#define RIGHT_HAND_KEYS 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32
-#define LEFT_HAND_KEYS 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 33 34 35
+#define LEFT_HAND_KEYS 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32
+#define RIGHT_HAND_KEYS 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 33 34 35
 #define BASE 0
 #define MEDIA 1
 #define NAV 2
