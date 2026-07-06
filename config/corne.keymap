@@ -192,7 +192,7 @@
 //             | GUI | LWR | SPC |     | ENT | RSE  | BSPC |
                         display-name = "Base";
                         bindings = <
-   &kp SINGLE_QUOTE &kp COMMA &kp PERIOD &kp P &kp Y     &kp F   &kp G  &kp C  &kp R  &kp L
+   &mt EXCL SINGLE_QUOTE &mt AMPS COMMA &mt QMARK PERIOD &kp P &kp Y     &kp F   &kp G  &kp C  &kp R  &kp L
    &lmt LGUI A &lmt LALT O &lmt LCTRL E &lmt LSHIFT U &kp I             &kp D   &rmt RSHIFT H  &rmt RCTRL T &rmt RALT N  &rmt RGUI S
    &kp SEMICOLON &kp Q &kp J &kp K &kp X         &kp B   &kp M  &kp W  &kp V  &kp Z
         &lt MEDIA ESC &lt NAV SPACE &lt MOUSE TAB      &lt SYM ENTER &lt NUM BSPC &lt FUN DEL
