@@ -88,7 +88,7 @@ combos {
             timeout-ms = <50>;
             key-positions = <23 24>;
             layers = <BASE>;
-            bindings = <&kp FSLH>;
+            bindings = <&mt  FSLH>;
         };
         c_underscore {
             timeout-ms = <50>;
@@ -107,5 +107,17 @@ combos {
             key-positions = <0 1>;
             layers = <BASE>;
             bindings = <&kp GRAVE>;
+        };
+        c_tilde_forward_slash {
+            timeout-ms = <50>;
+            key-positions = <5 6>;
+            layers = <BASE>;
+            bindings = <&m_tilde_forward_slash >;
+        };
+        c_dot_forward_slash {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            layers = <BASE>;
+            bindings = <&m_dot_forward_slash >;
         };
     };
