@@ -88,7 +88,7 @@ combos {
             timeout-ms = <50>;
             key-positions = <23 24>;
             layers = <BASE>;
-            bindings = <&mt  FSLH>;
+            bindings = <&b_slash_hold_tap 0 FSLH>;
         };
         c_underscore {
             timeout-ms = <50>;

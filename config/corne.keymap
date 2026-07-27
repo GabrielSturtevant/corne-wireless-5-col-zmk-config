@@ -46,6 +46,13 @@
     };
 
     behaviors {
+        b_slash_hold_tap: b_slash_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&m_dot_forward_slash>, <&kp>;
+        };
         open_shift_morph: open_shift_morph {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
