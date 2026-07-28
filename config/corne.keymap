@@ -46,7 +46,55 @@
     };
 
     behaviors {
-        magic_key: magic_key {
+        magic_key1: magic_key1 {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+
+            /* Fallback behavior if no trigger matches */
+            bindings = <&kp ESC>;
+
+            /* Trigger 1: Pressing B -> Magic Key outputs "efore" (completes "before") */
+
+            magic_t {
+                trigger-keys = <T>;
+                max-prior-idle-ms = <350>;
+                bindings = <&kp M &kp E &kp N &kp T >;
+            };
+            magic_j {
+                trigger-keys = <J>;
+                max-prior-idle-ms = <350>;
+                bindings = <&kp U &kp S &kp T >;
+            };
+            magic_b {
+                trigger-keys = <B>;
+                max-prior-idle-ms = <350>;
+                bindings = <&kp E &kp C &kp A &kp U &kp S &kp E>;
+            };
+            magic_w {
+                trigger-keys = <W>;
+                max-prior-idle-ms = <350>;
+                bindings = < &kp O &kp U &kp L &kp D >;
+            }
+            magic_space {
+                trigger-keys = <SPACE>;
+                max-prior-idle-ms = <350>;
+                bindings = < &kp T &kp H &kp E >;
+            }
+            magic_i {
+                trigger-keys = <I>;
+                max-prior-idle-ms = <350>;
+                bindings = < &kp N &kp G >;
+            }
+
+        };
+        mf1: magic_function_layer_tap1 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&magic_key1>;
+        };
+        magic_key2: magic_key2 {
             compatible = "zmk,behavior-adaptive-key";
             #binding-cells = <0>;
 
@@ -55,19 +103,29 @@
 
             /* Trigger 1: Pressing B -> Magic Key outputs "efore" (completes "before") */
 
-            magic_b {
-                trigger-keys = <B>;
+            magic_a {
+                trigger-keys = <A>;
                 max-prior-idle-ms = <350>;
-                bindings = <&kp E &kp F &kp O &kp R &kp E>;
+                bindings = < &kp N &kp D >;
             };
+            magic_comma {
+                trigger-keys = <KP_COMMA>;
+                max-prior-idle-ms = <350>;
+                bindings = < &kp SPACE &kp B &kp U &kp T >;
+            }
+            magic_y {
+                trigger-keys = <Y>;
+                max-prior-idle-ms = <350>;
+                bindings = < &kp O &kp U >;
+            }
 
         };
-        mf: magic_function_layer_tap {
+        mf2: magic_function_layer_tap2 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
-            bindings = <&mo>, <&magic_key>;
+            bindings = <&mo>, <&magic_key2>;
         };
         b_slash_hold_tap: b_slash_hold_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -176,7 +234,7 @@
    &mt EXCL SINGLE_QUOTE &mt AMPS COMMA &mt QMARK PERIOD &kp P &kp Y     &kp F   &kp G  &kp C  &kp R  &kp L
    &lmt LGUI A &lmt LALT O &lmt LCTRL E &lmt LSHIFT U &kp I             &kp D   &rmt RSHIFT H  &rmt RCTRL T &rmt RALT N  &rmt RGUI S
    &kp SEMICOLON &kp Q &kp J &kp K &kp X         &kp B   &kp M  &kp W  &kp V  &kp Z
-        &lt MEDIA ESC &lt NAV SPACE &lt MOUSE TAB      &lt SYM ENTER &lt NUM BSPC &mf FUN 0 /* see magic_function_layer_tap behavior */
+        &mf1 MEDIA 0 &lt NAV SPACE &lt MOUSE TAB      &lt SYM ENTER &lt NUM BSPC &mf2 FUN 0 /* see magic_function_layer_tap behavior */
                         >;
                 };
 
