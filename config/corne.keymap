@@ -74,17 +74,17 @@
                 trigger-keys = <W>;
                 max-prior-idle-ms = <350>;
                 bindings = < &kp O &kp U &kp L &kp D >;
-            }
+            };
             magic_space {
                 trigger-keys = <SPACE>;
                 max-prior-idle-ms = <350>;
                 bindings = < &kp T &kp H &kp E >;
-            }
+            };
             magic_i {
                 trigger-keys = <I>;
                 max-prior-idle-ms = <350>;
                 bindings = < &kp N &kp G >;
-            }
+            };
 
         };
         mf1: magic_function_layer_tap1 {
@@ -112,12 +112,12 @@
                 trigger-keys = <KP_COMMA>;
                 max-prior-idle-ms = <350>;
                 bindings = < &kp SPACE &kp B &kp U &kp T >;
-            }
+            };
             magic_y {
                 trigger-keys = <Y>;
                 max-prior-idle-ms = <350>;
                 bindings = < &kp O &kp U >;
-            }
+            };
 
         };
         mf2: magic_function_layer_tap2 {
