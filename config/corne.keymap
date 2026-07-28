@@ -46,6 +46,22 @@
     };
 
     behaviors {
+        magic_key: magic_key {
+            compatible = "zmk,behavior-adaptive-key";
+            #binding-cells = <0>;
+
+            /* Fallback behavior if no trigger matches */
+            bindings = <&kp DEL>;
+
+            /* Trigger 1: Pressing B -> Magic Key outputs "efore" (completes "before") */
+
+            magic_b {
+                trigger-keys = <B>;
+                max-prior-idle-ms = <350>;
+                bindings = <&kp E &kp F &kp O &kp R &kp E>;
+            };
+
+        };
         b_slash_hold_tap: b_slash_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -153,7 +169,7 @@
    &mt EXCL SINGLE_QUOTE &mt AMPS COMMA &mt QMARK PERIOD &kp P &kp Y     &kp F   &kp G  &kp C  &kp R  &kp L
    &lmt LGUI A &lmt LALT O &lmt LCTRL E &lmt LSHIFT U &kp I             &kp D   &rmt RSHIFT H  &rmt RCTRL T &rmt RALT N  &rmt RGUI S
    &kp SEMICOLON &kp Q &kp J &kp K &kp X         &kp B   &kp M  &kp W  &kp V  &kp Z
-        &lt MEDIA ESC &lt NAV SPACE &lt MOUSE TAB      &lt SYM ENTER &lt NUM BSPC &lt FUN DEL
+        &lt MEDIA ESC &lt NAV SPACE &lt MOUSE TAB      &lt SYM ENTER &lt NUM BSPC &lt FUN &magic_key
                         >;
                 };
 
