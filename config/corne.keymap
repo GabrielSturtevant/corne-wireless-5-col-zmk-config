@@ -51,7 +51,7 @@
             #binding-cells = <0>;
 
             /* Fallback behavior if no trigger matches */
-            bindings = <&kp ESC>;
+            bindings = <&kp TAB>;
 
             /* Trigger 1: Pressing B -> Magic Key outputs "efore" (completes "before") */
 
@@ -83,7 +83,7 @@
             magic_g {
                 trigger-keys = <G>;
                 max-prior-idle-ms = <350>;
-                bindings = < &kp I &kp T >;
+                bindings = < &kp I &kp T &kp SPACE >;
             };
 
         };
@@ -99,7 +99,7 @@
             #binding-cells = <0>;
 
             /* Fallback behavior if no trigger matches */
-            bindings = <&kp DEL>;
+            bindings = <&kp ENTER>;
 
             /* Trigger 1: Pressing B -> Magic Key outputs "efore" (completes "before") */
 
@@ -259,7 +259,7 @@
    &mt EXCL SINGLE_QUOTE &mt AMPS COMMA &mt QMARK PERIOD &kp P &kp Y     &kp F   &kp G  &kp C  &kp R  &kp L
    &lmt LGUI A &lmt LALT O &lmt LCTRL E &lmt LSHIFT U &kp I             &kp D   &rmt RSHIFT H  &rmt RCTRL T &rmt RALT N  &rmt RGUI S
    &kp SEMICOLON &kp Q &kp J &kp K &kp X         &kp B   &kp M  &kp W  &kp V  &kp Z
-        &mf1 MEDIA 0 &lt NAV SPACE &lt MOUSE TAB      &lt SYM ENTER &lt NUM BSPC &mf2 FUN 0 /* see magic_function_layer_tap behavior */
+        &lt MEDIA ESC &lt NAV SPACE &mf1 MOUSE 0      &mf2 SYM 0 &lt NUM BSPC &lt FUN DEL
                         >;
                 };
 
