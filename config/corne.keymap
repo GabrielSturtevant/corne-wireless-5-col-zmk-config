@@ -75,11 +75,6 @@
                 max-prior-idle-ms = <350>;
                 bindings = < &kp O &kp U &kp L &kp D >;
             };
-            magic_space {
-                trigger-keys = <SPACE>;
-                max-prior-idle-ms = <350>;
-                bindings = < &kp T &kp H &kp E >;
-            };
             magic_i {
                 trigger-keys = <I>;
                 max-prior-idle-ms = <350>;
@@ -108,15 +103,25 @@
                 max-prior-idle-ms = <350>;
                 bindings = < &kp N &kp D >;
             };
-            magic_comma {
-                trigger-keys = <KP_COMMA>;
-                max-prior-idle-ms = <350>;
-                bindings = < &kp SPACE &kp B &kp U &kp T >;
-            };
             magic_y {
                 trigger-keys = <Y>;
                 max-prior-idle-ms = <350>;
                 bindings = < &kp O &kp U >;
+            };
+            magic_esc {
+                trigger-keys = <ESC>;
+                max-prior-idle-ms = <350>;
+                bindings = < &kp COLON &kp W >;
+            };
+            magic_comma {
+                trigger-keys = <COMMA>;
+                max-prior-idle-ms = <350>;
+                bindings = < &kp SPACE &kp B &kp U &kp T >;
+            };
+            magic_space {
+                trigger-keys = <SPACE>;
+                max-prior-idle-ms = <350>;
+                bindings = < &kp T &kp H &kp E >;
             };
 
         };
