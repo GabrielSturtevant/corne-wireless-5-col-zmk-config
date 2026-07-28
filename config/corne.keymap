@@ -60,11 +60,6 @@
                 max-prior-idle-ms = <350>;
                 bindings = <&kp M &kp E &kp N &kp T >;
             };
-            magic_j {
-                trigger-keys = <J>;
-                max-prior-idle-ms = <350>;
-                bindings = <&kp U &kp S &kp T >;
-            };
             magic_b {
                 trigger-keys = <B>;
                 max-prior-idle-ms = <350>;
@@ -75,11 +70,17 @@
                 max-prior-idle-ms = <350>;
                 bindings = < &kp O &kp U &kp L &kp D >;
             };
-            magic_i {
-                trigger-keys = <I>;
+            magic_s {
+                trigger-keys = <S>;
                 max-prior-idle-ms = <350>;
-                bindings = < &kp N &kp G >;
+                bindings = < &kp U &kp D &kp O >;
             };
+            magic_c {
+                trigger-keys = <C>;
+                max-prior-idle-ms = <350>;
+                bindings = < &kp O &kp M &kp M &kp I &kp T >;
+            };
+
 
         };
         mf1: magic_function_layer_tap1 {
@@ -107,6 +108,21 @@
                 trigger-keys = <Y>;
                 max-prior-idle-ms = <350>;
                 bindings = < &kp O &kp U >;
+            };
+            magic_j {
+                trigger-keys = <J>;
+                max-prior-idle-ms = <350>;
+                bindings = <&kp U &kp S &kp T >;
+            };
+            magic_p {
+                trigger-keys = <P>;
+                max-prior-idle-ms = <350>;
+                bindings = < &kp A &kp C &kp M &kp A &kp N >;
+            };
+            magic_i {
+                trigger-keys = <I>;
+                max-prior-idle-ms = <350>;
+                bindings = < &kp N &kp G >;
             };
             magic_esc {
                 trigger-keys = <ESC>;
