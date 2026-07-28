@@ -71,7 +71,6 @@
             bindings = <&open_ctrl_morph>, <&kp LT>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
-
         close_shift_morph: close_shift_morph {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -90,7 +89,6 @@
             bindings = <&close_ctrl_morph>, <&kp GT>;
             mods = <(MOD_LALT|MOD_RALT)>;
         };
-
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -104,8 +102,18 @@
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
             bindings = <&kp>, <&kp>;
             display-name = "Mod-Tap";
+        };
+        lt: layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            bindings = <&mo>, <&kp>;
+            display-name = "Layer-Tap";
         };
         rmt: right_mod_tap {
             compatible = "zmk,behavior-hold-tap";
