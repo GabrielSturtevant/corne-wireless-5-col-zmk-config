@@ -1,0 +1,123 @@
+combos {
+        compatible = "zmk,combos";
+        c_ctr_backspace {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            layers = <BASE>;
+            bindings = <&kp LC(BSPC)>;
+        };
+        c_backspace {
+            timeout-ms = <50>;
+            key-positions = <25 26>;
+            layers = <BASE>;
+            bindings = <&kp BSPC>;
+        };
+        c_open_paren {
+            timeout-ms = <25>;
+            key-positions = <11 12>;
+            layers = <BASE>;
+            bindings = <&kp LPAR>;
+        };
+        c_close_paren {
+            timeout-ms = <25>;
+            key-positions = <12 13>;
+            layers = <BASE>;
+            bindings = <&kp RPAR>;
+        };
+        c_open_brace {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            layers = <BASE>;
+            bindings = <&kp LBRC>;
+        };
+        c_close_brace {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            layers = <BASE>;
+            bindings = <&kp RBRC>;
+        };
+        c_open_bracket {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            layers = <BASE>;
+            bindings = <&kp LBKT>;
+        };
+        c_close_bracket {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            layers = <BASE>;
+            bindings = <&kp RBKT>;
+        };
+        c_ctrl_left {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            layers = <NAV>;
+            bindings = <&mt HOME LC(LEFT)>;
+        };
+        c_ctrl_right {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            layers = <NAV>;
+            bindings = <&mt END LC(RIGHT)>;
+        };
+        c_key_repeat {
+            timeout-ms = <50>;
+            key-positions = <34 35>;
+            layers = <BASE>;
+            bindings = <&key_repeat>;
+        };
+        c_bluetooth_clear {
+            timeout-ms = <50>;
+            key-positions = <5 29>;
+            layers = <MEDIA>;
+            bindings = <&bt BT_CLR>;
+        };
+        c_plus_sign {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            layers = <BASE>;
+            bindings = <&kp PLUS>;
+        };
+        c_equal_sign {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            layers = <BASE>;
+            bindings = <&kp EQUAL>;
+        };
+        c_forward_slash {
+            timeout-ms = <50>;
+            key-positions = <23 24>;
+            layers = <BASE>;
+            bindings = <&b_slash_hold_tap 0 FSLH>;
+        };
+        c_underscore {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            layers = <BASE>;
+            bindings = <&kp UNDER>;
+        };
+        c_minus {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            layers = <BASE>;
+            bindings = <&kp MINUS>;
+        };
+        c_grave {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            layers = <BASE>;
+            bindings = <&kp GRAVE>;
+        };
+        c_tilde_forward_slash {
+            timeout-ms = <50>;
+            key-positions = <5 6>;
+            layers = <BASE>;
+            bindings = <&m_tilde_forward_slash >;
+        };
+        c_dot_forward_slash {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            layers = <BASE>;
+            bindings = <&m_dot_forward_slash >;
+        };
+    };
